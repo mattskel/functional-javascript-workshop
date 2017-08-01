@@ -182,8 +182,10 @@
 //  }, [])
 //}
 
-module.exports = function arrayMap(arr, fn) {
-    return arr.reduce(function (accumulator,currentVal) {
-        return accumulator.push(fn(currentVal));
-    },[]);
+// Function Spies
+
+function Spy(target, method) {
+    
 }
+
+module.exports = Spy
