@@ -146,3 +146,11 @@ function logger(namespace) {
 }
 
 module.exports = logger
+
+// Function Spies
+
+function Spy(target, method) {
+    
+}
+
+module.exports = Spy
