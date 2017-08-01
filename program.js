@@ -181,11 +181,3 @@
 //    return acc
 //  }, [])
 //}
-
-// Function Spies
-
-function Spy(target, method) {
-    
-}
-
-module.exports = Spy
