@@ -139,45 +139,45 @@
 
 // Partial Application without Bind
 
-//var slice = Array.prototype.slice
-//
-//function logger(namespace) {
-////    return this.apply(namespace);
-//    return function() {
-//        var args = slice.call(arguments);
-//        console.log.apply(null, [namespace].concat(args));
-//    }
-//}
-//module.exports = logger
-//
-//var slice = Array.prototype.slice
-//
-//function logger(namespace) {
-//  return function() {
-//    console.log.apply(console, [namespace].concat(slice.call(arguments)))
-//  }
-//}
-//
-//module.exports = logger
+var slice = Array.prototype.slice
+
+function logger(namespace) {
+//    return this.apply(namespace);
+    return function() {
+        var args = slice.call(arguments);
+        console.log.apply(null, [namespace].concat(args));
+    }
+}
+module.exports = logger
+
+var slice = Array.prototype.slice
+
+function logger(namespace) {
+  return function() {
+    console.log.apply(console, [namespace].concat(slice.call(arguments)))
+  }
+}
+
+module.exports = logger
 
 // Partial applicatoin with bind
 
-//module.exports = function(namespace) {
-//    return console.log.bind(console, namespace);
-//}
+module.exports = function(namespace) {
+    return console.log.bind(console, namespace);
+}
 
 // Implement Map with Reduce
 
-//module.exports = function arrayMap(arr, fn) {
-//    return arr.reduce((accumulator,currentVal) => {
-//        accumulator.push(fn(currentVal));
-//        return accumulator;
-//    },[]);
-//}
-//
-//module.exports = function arrayMap(arr, fn, thisArg) {
-//  return arr.reduce(function(acc, item, index, arr) {
-//    acc.push(fn.call(thisArg, item, index, arr))
-//    return acc
-//  }, [])
-//}
+module.exports = function arrayMap(arr, fn) {
+    return arr.reduce((accumulator,currentVal) => {
+        accumulator.push(fn(currentVal));
+        return accumulator;
+    },[]);
+}
+
+module.exports = function arrayMap(arr, fn, thisArg) {
+  return arr.reduce(function(acc, item, index, arr) {
+    acc.push(fn.call(thisArg, item, index, arr))
+    return acc
+  }, [])
+}
