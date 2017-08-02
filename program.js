@@ -181,3 +181,11 @@ module.exports = function arrayMap(arr, fn, thisArg) {
     return acc
   }, [])
 }
+
+// Function Spies
+
+function Spy(target, method) {
+    
+}
+
+module.exports = Spy
